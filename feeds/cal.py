@@ -43,7 +43,7 @@ def get_calendar(url, day, calname):
 
             entries.append((starttime, calname, unidecode(title)))
 
-    except Exception as e:
+    except:
         entries = []
 
     return entries
@@ -80,7 +80,7 @@ def feed(printer, args, state):
         return
 
     printer.inverseOn()
-    printer.print('{:^32}'.format('CALENDAR'))
+    printer.print('{:^32}'.format('CALENDAR for ' + thedate))
     printer.inverseOff()
 
     for item in entries:
